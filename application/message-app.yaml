@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: message-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/muhammad-asn/message-app'
+    path: deployments-argoapp
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev-argoapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
