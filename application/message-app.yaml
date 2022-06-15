@@ -5,8 +5,11 @@ metadata:
   namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: -1001541434902
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    notifications.argoproj.io/subscribe.on-deployed.telegram: -1001541434902
+    notifications.argoproj.io/subscribe.on-sync-failed.telegram: -1001541434902
+    notifications.argoproj.io/subscribe.on-sync-running.telegram: -1001541434902
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
