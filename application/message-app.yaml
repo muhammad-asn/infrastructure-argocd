@@ -8,6 +8,15 @@ metadata:
     notifications.argoproj.io/subscribe.on-deployed.telegram: -1001541434902
     notifications.argoproj.io/subscribe.on-sync-failed.telegram: -1001541434902
     notifications.argoproj.io/subscribe.on-sync-running.telegram: -1001541434902
+    argocd-image-updater.argoproj.io/git-branch: master
+    argocd-image-updater.argoproj.io/image-list: backend=docker.io/nuga99/app_backend,
+      database=docker.io/nuga99/app_database, server=docker.io/nuga99/app_server, 
+      cache=docker.io/nuga99/app_cache
+    argocd-image-updater.argoproj.io/backend.update-strategy: semver
+    argocd-image-updater.argoproj.io/database.update-strategy: semver
+    argocd-image-updater.argoproj.io/server.update-strategy: semver
+    argocd-image-updater.argoproj.io/cache.update-strategy: semver
+
   # finalizers:
   #   - resources-finalizer.argocd.argoproj.io
 spec:

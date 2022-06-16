@@ -4,6 +4,9 @@ metadata:
   namespace: argocd
   name: argocd-notifications-cm
 data:
+  context: |
+    argocdUrl: http://argocd-notification.local:8000
+    environmentName: dev
   service.telegram: |
     token: $telegram-token
   subscriptions: |
